@@ -1,0 +1,15 @@
+<deployment xmlns="http://xml.apache.org/axis/wsdd/"
+xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+<transport name="http"
+pivot="java:org.apache.axis.transport.http.HTTPSender" />
+<globalConfiguration>
+<requestFlow>
+<handler type="java:org.apache.ws.axis.security.WSDoAllSender">
+<parameter name="action" value="UsernameToken" />
+<parameter name="user" value="<userId>" /> 
+<parameter name="passwordType" value="PasswordDigest" />
+<parameter name="passwordCallbackClass" value="com.omniture.api.PWCallback" />
+</handler>
+</requestFlow>
+</globalConfiguration>
+</deployment>
